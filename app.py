@@ -17,8 +17,8 @@ nltk.download("omw-1.4")
 
 
 # Load tuned pipeline and label encoder
-pipeline = joblib.load("outputs/best_tuned_pipeline.pkl")
-label_encoder = joblib.load("outputs/label_encoder.pkl")
+pipeline = joblib.load("best_tuned_pipeline.pkl")
+label_encoder = joblib.load("label_encoder.pkl")
 
 # Access fitted TF-IDF and classifier inside pipeline
 tfidf = pipeline.named_steps["tfidf"]
@@ -135,5 +135,6 @@ if st.button("Predict Specialty"):
             ax2.set_ylabel("Keyword")
             ax2.set_title("Top Positive Keyword Contributions")
             plt.tight_layout()
+
 
             st.pyplot(fig2)
